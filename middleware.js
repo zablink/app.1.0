@@ -5,7 +5,7 @@ export function middleware(req) {
   const devMode = req.cookies.get("devMode"); // เช็ค Cookie
 
   if (process.env.MAINTENANCE_MODE === "true" && devMode !== "yes") {
-    return NextResponse.rewrite(new URL("/coming-soon", req.url));
+    return NextResponse.rewrite(new URL("/coming-soon.html", req.url));
   }
   return NextResponse.next();
 }
