@@ -6,9 +6,9 @@ export function middleware(req) {
 
   if (process.env.MAINTENANCE_MODE === "true" && devMode !== "yes") {
     console.log('go to SOON');
-    return NextResponse.rewrite(new URL("/coming-soon.html", req.url));
+    return NextResponse.rewrite(new URL("/coming-soon", req.url));
   }else{
-    console.log('goto real');
+    console.log('goto real'); 
   }
   return NextResponse.next();
 }
