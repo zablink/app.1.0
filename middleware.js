@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server.js";
 
 export function middleware(req) {
   const url = req.nextUrl;
@@ -12,3 +12,7 @@ export function middleware(req) {
   }
   return NextResponse.next();
 }
+
+export const config = {
+  matcher: "/:path*",
+};
